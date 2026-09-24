@@ -9,38 +9,93 @@ public class Cliente extends Persona{
     private LocalDate fechaResgistro;
 
     /**
-     * Metodo constructor del Cliente
-     * @param nombre
-     * @param id
-     * @param telefono
-     * @param correo
-     * @param edad
-     * @param fechaResgistro
+     * Constructor para el cliente
+     * @param builder
      */
-    public Cliente(Builder builder) {
-        super(nombre, id, telefono);
-        this.correo = correo;
-        this.edad = edad;
-        this.fechaResgistro = fechaResgistro;
+    public Cliente (Builder builder) {
+        super(builder.nombre, builder.id, builder.telefono);
+        this.correo = builder.correo;
+        this.edad = builder.edad;
+        this.fechaResgistro = builder.fechaResgistro;
     }
 
-    public static class Builder extends Persona{
+
+    /**
+     * Clase Builder
+     */
+    public static class Builder {
+        private String nombre;
+        private String id;
+        private String telefono;
         private String correo;
         private int edad;
         private LocalDate fechaResgistro;
 
         /**
-         * Metodo constructor para la clase Persona
+         * Metodo constructor del nombre
          * @param nombre
-         * @param id
-         * @param telefono
+         * @return
          */
-        public Builder(String nombre, String id, String telefono) {
-            super(nombre, id, telefono);
+        public Builder nombre (String nombre){
+            this.nombre = nombre;
+            return this;
+        }
+        /**
+         * Metodo constructor del id
+         * @param id
+         * @return
+         */
+        public Builder id (String id){
+            this.id = id;
+            return this;
         }
 
-        public Builder nombre (String nombre){
-            this.nombre
+        /**
+         * Metodo constructor del telefono
+         * @param telefono
+         * @return
+         */
+        public Builder telefono (String telefono){
+            this.telefono = telefono;
+            return this;
+        }
+
+        /**
+         * Metodo constructor del correo
+         * @param correo
+         * @return
+         */
+        public Builder corrreo (String correo){
+            this.correo = correo ;
+            return this;
+        }
+
+        /**
+         * Metodo constructor de la edad
+         * @param edad
+         * @return
+         */
+        public Builder edad (int edad){
+            this.edad = edad;
+            return this;
+        }
+
+        /**
+         * Metodo constructor de la fecha
+         * @param fechaRegistro
+         * @return
+         */
+        public Builder fechaRegistro (LocalDate fechaRegistro){
+            this.fechaResgistro = fechaRegistro;
+            return this;
+        }
+
+        /**
+         * Metodo builder para cliente
+         * @return
+         */
+        public Cliente builder () {
+            return new Cliente(this);
         }
     }
 }
