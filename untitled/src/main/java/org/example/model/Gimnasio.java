@@ -1,6 +1,7 @@
 package org.example.model;
 
-import java.lang.reflect.Array;
+import org.example.model.factories.PeopleFactory;
+
 import java.util.ArrayList;
 
 public final class Gimnasio {

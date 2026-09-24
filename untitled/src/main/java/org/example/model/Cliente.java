@@ -19,6 +19,14 @@ public class Cliente extends Persona{
         this.fechaResgistro = builder.fechaResgistro;
     }
 
+    /**
+     * Metodo entrenar del entrendor
+     */
+    @Override
+    public void entrenar() {
+        System.out.println("El cliente está entrenando");
+    }
+
 
     /**
      * Clase Builder
@@ -94,8 +102,20 @@ public class Cliente extends Persona{
          * Metodo builder para cliente
          * @return
          */
-        public Cliente builder () {
+        public Cliente build () {
             return new Cliente(this);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "correo='" + correo + '\'' +
+                ", edad=" + edad +
+                ", fechaResgistro=" + fechaResgistro +
+                ", nombre='" + nombre + '\'' +
+                ", id='" + id + '\'' +
+                ", telefono='" + telefono + '\'' +
+                '}';
     }
 }
