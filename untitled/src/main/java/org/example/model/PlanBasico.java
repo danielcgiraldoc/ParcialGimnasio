@@ -41,7 +41,7 @@ public class PlanBasico {
             resultado += s.getValorServicio();
         }
         }
-return valorMensual;
+return resultado;
     }
 
 
