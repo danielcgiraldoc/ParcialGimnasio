@@ -2,11 +2,14 @@ package org.example.model;
 
 import javax.swing.border.EtchedBorder;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Entrenador extends Persona{
 
     private Especialidad especialidad;
     private double valorSesion;
+    private ArrayList<PlanBasico> listPlanes;
+    private ArrayList<ServicioAdicional> listServiciosAdicionales;
 
     /**
      * Metodo constructor Entrenador
@@ -16,8 +19,16 @@ public class Entrenador extends Persona{
         super(builder.nombre, builder.id, builder.telefono);
         this.especialidad = builder.especialidad;
         this.valorSesion = builder.valorSesion;
+        this.listPlanes = new ArrayList<>();
     }
 
+    /**
+     * metodo para asignar planes de entrenamiento al entrenador
+     * @param plan
+     */
+    public void asignarPlan(PlanBasico plan){
+        listPlanes.add(plan);
+    }
     /**
      * Metodo entrenar del entrendor
      */

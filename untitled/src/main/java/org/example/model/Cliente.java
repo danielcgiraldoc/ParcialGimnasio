@@ -7,6 +7,9 @@ public class Cliente extends Persona{
     private String correo;
     private int edad;
     private LocalDate fechaResgistro;
+    private PlanBasico thePlan;
+
+
 
     /**
      * Constructor para el cliente

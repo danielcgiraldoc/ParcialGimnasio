@@ -11,6 +11,10 @@ public class PlanPremium extends PlanBasico {
         this.clasesGrupales = builder.clasesGrupales;
     }
 
+
+    /**
+     * Clase Builder del plan premium
+     */
     public static class Builder {
 
         private final String codigo;

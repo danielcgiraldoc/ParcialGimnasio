@@ -6,6 +6,7 @@ public class ServicioAdicional {
     private String descripcion;
     private String valorServicio;
     private boolean disponibilidad;
+    private Entrenador theEntrenador;
 
     /**
      * Constructor Servivio adicional

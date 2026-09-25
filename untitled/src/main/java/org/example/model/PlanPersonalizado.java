@@ -7,6 +7,7 @@ public class PlanPersonalizado extends PlanBasico{
     private int cantidadSesiones;
     private EspecialidadRequerida especialidadRequerida;
     private String objetivo;
+    private Entrenador theEntrenador;
 
     /**
      * Constructor para plan personalizado
@@ -18,6 +19,7 @@ public class PlanPersonalizado extends PlanBasico{
         this.especialidadRequerida = builder.especialidadRequerida;
         this.objetivo = builder.objetivo;
     }
+
 
     /**
      * Clase builder del plan personalizado

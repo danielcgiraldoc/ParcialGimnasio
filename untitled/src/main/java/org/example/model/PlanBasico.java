@@ -1,5 +1,7 @@
 package org.example.model;
 
+import java.util.ArrayList;
+
 public class PlanBasico {
     protected String codigo;
     protected String nombre;
@@ -7,6 +9,8 @@ public class PlanBasico {
     protected int duracionMeses;
     protected double valorMensual;
     protected Estado estado;
+    protected Cliente theCliente;
+    protected ArrayList<ServicioAdicional> listServiciosAdicionales;
 
     /**
      * Metodo constructor
@@ -24,5 +28,6 @@ public class PlanBasico {
         this.duracionMeses = duracionMeses;
         this.valorMensual = valorMensual;
         this.estado = estado;
+        this.listServiciosAdicionales = new ArrayList<>();
     }
 }

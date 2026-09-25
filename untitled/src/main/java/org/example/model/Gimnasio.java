@@ -1,6 +1,6 @@
 package org.example.model;
 
-import org.example.model.factories.PeopleFactory;
+import org.example.model.factories.*;
 
 import java.util.ArrayList;
 
@@ -11,10 +11,14 @@ private static Gimnasio instance;
     private String nit;
     private String correo;
     private String paginaWeb;
-    private PeopleFactory fabricaPersonas;
-    private PlanFactory fabricaPlanes;
+    private ClienteFactory fabricaClientes;
+    private EntrenadorFactory fabricaEntrenadores;
+    private PlanBasicoFactory fabricaPlanBasico;
+    private PlanPersonalizadoFactory fabricaPlanPersonalizado;
+    private PlanPremiumFactory fabricaPlanPremium;
     private ArrayList<Cliente> listClientes;
     private ArrayList<Entrenador> listEntrenadores;
+    private ArrayList<PlanBasico> listPlanes;
     private ArrayList<ServicioAdicional> listServiciosAdicionales;
 
     /**
@@ -25,10 +29,14 @@ private static Gimnasio instance;
         this.nit = "109245";
         this.correo = "smartgym@gmail.com";
         this.paginaWeb = "https://smartgym.com";
-        this.fabricaPersonas = new PeopleFactory();
-        this.fabricaPlanes = new PlanFactory();
+        this.fabricaClientes = new ClienteFactory();
+        this.fabricaEntrenadores = new EntrenadorFactory();
+        this.fabricaPlanBasico = new PlanBasicoFactory();
+        this.fabricaPlanPersonalizado = new PlanPersonalizadoFactory();
+        this.fabricaPlanPremium = new PlanPremiumFactory();
         this.listClientes = new ArrayList<>();
         this.listEntrenadores = new ArrayList<>();
+        this.listPlanes = new ArrayList<>();
         this.listServiciosAdicionales = new ArrayList<>();
     }
 
