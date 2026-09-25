@@ -4,13 +4,23 @@ public class PlanPremium extends PlanBasico {
 
     private boolean areasDeportivas;
     private boolean clasesGrupales;
+    private double valorAdicional;
 
     public PlanPremium(Builder builder) {
         super(builder.codigo, builder.nombre, builder.descripcion, builder.duracionMeses, builder.valorMensual, builder.estado);
         this.areasDeportivas = builder.areasDeportivas;
         this.clasesGrupales = builder.clasesGrupales;
+        this.valorAdicional = builder.valorAdicional;
     }
 
+    /**
+     * Calcular valor total del plan premium
+     * @return
+     */
+    @Override
+    public double calcularValorTotal() {
+        return super.calcularValorTotal() + valorAdicional;
+    }
 
     /**
      * Clase Builder del plan premium
@@ -25,6 +35,7 @@ public class PlanPremium extends PlanBasico {
         private final Estado estado;
         private boolean areasDeportivas;
         private boolean clasesGrupales;
+        private double valorAdicional;
 
         public Builder(String codigo, String nombre, String descripcion, int duracionMeses, double valorMensual, Estado estado) {
             this.codigo = codigo;
@@ -44,9 +55,37 @@ public class PlanPremium extends PlanBasico {
             this.clasesGrupales = clasesGrupales;
             return this;
         }
+        public Builder valorAdicional(double valorAdicional) {
+            this.valorAdicional = valorAdicional;
+            return this;
+        }
 
         public PlanPremium build() {
             return new PlanPremium(this);
         }
+    }
+
+    public boolean isAreasDeportivas() {
+        return areasDeportivas;
+    }
+
+    public void setAreasDeportivas(boolean areasDeportivas) {
+        this.areasDeportivas = areasDeportivas;
+    }
+
+    public boolean isClasesGrupales() {
+        return clasesGrupales;
+    }
+
+    public void setClasesGrupales(boolean clasesGrupales) {
+        this.clasesGrupales = clasesGrupales;
+    }
+
+    public double getValorAdicional() {
+        return valorAdicional;
+    }
+
+    public void setValorAdicional(double valorAdicional) {
+        this.valorAdicional = valorAdicional;
     }
 }

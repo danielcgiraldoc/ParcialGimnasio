@@ -20,6 +20,7 @@ public class Entrenador extends Persona{
         this.especialidad = builder.especialidad;
         this.valorSesion = builder.valorSesion;
         this.listPlanes = new ArrayList<>();
+        this.listServiciosAdicionales = new ArrayList<>();
     }
 
     /**
@@ -29,6 +30,15 @@ public class Entrenador extends Persona{
     public void asignarPlan(PlanBasico plan){
         listPlanes.add(plan);
     }
+
+    /**
+     * Asigar servicio adicional al entrenador
+     * @param servicio
+     */
+    public void asignarServicioAdicional(ServicioAdicional servicio) {
+        listServiciosAdicionales.add(servicio);
+    }
+
     /**
      * Metodo entrenar del entrendor
      */
@@ -116,5 +126,37 @@ public class Entrenador extends Persona{
                 ", id='" + id + '\'' +
                 ", telefono='" + telefono + '\'' +
                 '}';
+    }
+
+    public Especialidad getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(Especialidad especialidad) {
+        this.especialidad = especialidad;
+    }
+
+    public double getValorSesion() {
+        return valorSesion;
+    }
+
+    public void setValorSesion(double valorSesion) {
+        this.valorSesion = valorSesion;
+    }
+
+    public ArrayList<PlanBasico> getListPlanes() {
+        return listPlanes;
+    }
+
+    public void setListPlanes(ArrayList<PlanBasico> listPlanes) {
+        this.listPlanes = listPlanes;
+    }
+
+    public ArrayList<ServicioAdicional> getListServiciosAdicionales() {
+        return listServiciosAdicionales;
+    }
+
+    public void setListServiciosAdicionales(ArrayList<ServicioAdicional> listServiciosAdicionales) {
+        this.listServiciosAdicionales = listServiciosAdicionales;
     }
 }

@@ -20,6 +20,18 @@ public class PlanPersonalizado extends PlanBasico{
         this.objetivo = builder.objetivo;
     }
 
+    /**
+     * Calcular valor total plan personalizado
+     * @return
+     */
+    @Override
+    public double calcularValorTotal() {
+        double total = super.calcularValorTotal();
+        if (theEntrenador != null) {
+            total += cantidadSesiones * theEntrenador.getValorSesion();
+        }
+        return total;
+    }
 
     /**
      * Clase builder del plan personalizado
@@ -71,4 +83,35 @@ public class PlanPersonalizado extends PlanBasico{
         }
     }
 
+    public int getCantidadSesiones() {
+        return cantidadSesiones;
+    }
+
+    public void setCantidadSesiones(int cantidadSesiones) {
+        this.cantidadSesiones = cantidadSesiones;
+    }
+
+    public EspecialidadRequerida getEspecialidadRequerida() {
+        return especialidadRequerida;
+    }
+
+    public void setEspecialidadRequerida(EspecialidadRequerida especialidadRequerida) {
+        this.especialidadRequerida = especialidadRequerida;
+    }
+
+    public String getObjetivo() {
+        return objetivo;
+    }
+
+    public void setObjetivo(String objetivo) {
+        this.objetivo = objetivo;
+    }
+
+    public Entrenador getTheEntrenador() {
+        return theEntrenador;
+    }
+
+    public void setTheEntrenador(Entrenador theEntrenador) {
+        this.theEntrenador = theEntrenador;
+    }
 }

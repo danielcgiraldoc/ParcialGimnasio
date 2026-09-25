@@ -76,7 +76,7 @@ public class Cliente extends Persona{
          * @param correo
          * @return
          */
-        public Builder corrreo (String correo){
+        public Builder correo (String correo){
             this.correo = correo ;
             return this;
         }
@@ -120,5 +120,37 @@ public class Cliente extends Persona{
                 ", id='" + id + '\'' +
                 ", telefono='" + telefono + '\'' +
                 '}';
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public LocalDate getFechaResgistro() {
+        return fechaResgistro;
+    }
+
+    public void setFechaResgistro(LocalDate fechaResgistro) {
+        this.fechaResgistro = fechaResgistro;
+    }
+
+    public PlanBasico getThePlan() {
+        return thePlan;
+    }
+
+    public void setThePlan(PlanBasico thePlan) {
+        this.thePlan = thePlan;
     }
 }
