@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.viewController.InscripcionesViewController">
+    <top>
+        <VBox alignment="CENTER" prefHeight="85.0" style="-fx-background-color: #000000; -fx-padding: 10;" BorderPane.alignment="CENTER">
+            <children>
+                <Label style="-fx-text-fill: gold; -fx-font-weight: bold;" text="INSCRIPCIONES">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Label>
+                <Label style="-fx-text-fill: gold;" text="Clientes, planes e ingresos">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" spacing="10.0" style="-fx-padding: 15;">
+            <children>
+                <Label text="Inscripciones registradas">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <TableView fx:id="tablaInscripciones" prefHeight="330.0" prefWidth="850.0">
+                    <columns>
+                        <TableColumn fx:id="colCliente" prefWidth="170.0" text="Cliente" />
+                        <TableColumn fx:id="colPlan" prefWidth="150.0" text="Plan" />
+                        <TableColumn fx:id="colEstado" prefWidth="110.0" text="Estado" />
+                        <TableColumn fx:id="colServicios" prefWidth="250.0" text="Servicios Adicionales" />
+                        <TableColumn fx:id="colValorTotal" prefWidth="140.0" text="Valor Total" />
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER" prefHeight="45.0" spacing="20.0">
+                    <children>
+                        <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#cargarInscripciones" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: #000000; -fx-text-fill: gold; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 10;" text="Actualizar tabla">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#volverInicio" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: #000000; -fx-text-fill: gold; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 10;" text="Volver">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+                <Label text="Ingresos por fecha">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <HBox alignment="CENTER" prefHeight="45.0" spacing="15.0">
+                    <children>
+                        <DatePicker fx:id="dpFechaIngresos" />
+                        <Button fx:id="btnCalcularIngresos" mnemonicParsing="false" onAction="#calcularIngresos" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: gold; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 10;" text="Calcular Ingresos">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+                <Label fx:id="lblIngresosTotales" style="-fx-font-weight: bold;" text="Ingresos totales: $0">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
