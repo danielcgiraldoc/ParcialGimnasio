@@ -96,12 +96,26 @@ private static Gimnasio instance;
 
     /**
      * Consultar cliente por telefono
+     * @param id
+     * @return
+     */
+    public Cliente consultarCliente(String id) {
+        for (Cliente cliente : listClientes) {
+            if (cliente.getId().equals(id)) {
+                return cliente;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Consultar cliente por teléfono
      * @param telefono
      * @return
      */
-    public Cliente consultarCliente(String telefono) {
+    public Cliente consultarClientePorTelefono(String telefono) {
         for (Cliente cliente : listClientes) {
-            if (cliente.getId().equals(telefono)) {
+            if (cliente.getTelefono().equals(telefono)) {
                 return cliente;
             }
         }
@@ -138,7 +152,7 @@ private static Gimnasio instance;
      */
 
     public boolean actualizarCliente(String id, String nombre, String telefono, String correo, int edad) {
-        Cliente cliente = consultarCliente(telefono);
+        Cliente cliente = consultarCliente(id);
         if (cliente == null) {
             return false;
         }
