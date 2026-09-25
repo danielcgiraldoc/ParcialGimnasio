@@ -59,7 +59,7 @@ public class PlanPersonalizado extends PlanBasico{
          */
         public Builder (String codigo, String nombre, String descripcion, int duracionMeses, double valorMensual, Estado estado){
             this.codigo = codigo;
-            this.nombre = codigo;
+            this.nombre = nombre;
             this.descripcion = descripcion;
             this.duracionMeses= duracionMeses;
             this.valorMensual = valorMensual;
