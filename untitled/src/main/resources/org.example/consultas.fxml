@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="400.0" prefWidth="450.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.viewController.ConsultasViewController">
+
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <padding>
+                <Insets bottom="40" left="40" right="40" top="40" />
+            </padding>
+
+            <Label style="-fx-text-fill: gold; -fx-font-size: 28px; -fx-font-weight: bold;" text="CONSULTAS" />
+
+            <Label style="-fx-text-fill: gold; -fx-font-size: 16px;" text="Ingrese el número de teléfono del cliente" />
+
+            <TextField fx:id="txtTelefono" maxWidth="300" prefWidth="300" promptText="Número de teléfono" />
+
+            <Button onAction="#consultarTelefono" prefWidth="140" style="-fx-background-color: gold; -fx-text-fill: black; -fx-font-weight: bold;" text="CONSULTAR" />
+
+            <Label fx:id="lblResultado" style="-fx-text-fill: gold; -fx-font-size: 16px;" text="" wrapText="true" />
+
+            <HBox alignment="CENTER" />
+             <Button fx:id="btnVolver" onAction="#volverInicio" prefWidth="120" style="-fx-background-color: gold; -fx-text-fill: black; -fx-font-weight: bold;" text="VOLVER" />
+
+        </VBox>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.viewController.ServiciosViewController"
+            style="-fx-background-color: #000000;">
+
+    <top>
+        <VBox alignment="CENTER" spacing="5">
+            <padding>
+                <Insets top="20" right="20" bottom="15" left="20"/>
+            </padding>
+
+            <Label text="SERVICIOS ADICIONALES"
+                   style="-fx-text-fill: gold; -fx-font-size: 28px; -fx-font-weight: bold;"/>
+
+            <Label text="Registrar servicios y asociarlos a un plan"
+                   style="-fx-text-fill: gold; -fx-font-size: 14px;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="15">
+            <padding>
+                <Insets top="10" right="40" bottom="20" left="40"/>
+            </padding>
+
+            <GridPane hgap="15" vgap="12">
+
+                <Label text="Código:"
+                       style="-fx-text-fill: gold; -fx-font-size: 14px;"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="0"/>
+
+                <TextField fx:id="txtCodigo"
+                           promptText="Código"
+                           prefWidth="220"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="0"/>
+
+                <Label text="Nombre:"
+                       style="-fx-text-fill: gold; -fx-font-size: 14px;"
+                       GridPane.columnIndex="2"
+                       GridPane.rowIndex="0"/>
+
+                <TextField fx:id="txtNombre"
+                           promptText="Nombre del servicio"
+                           prefWidth="220"
+                           GridPane.columnIndex="3"
+                           GridPane.rowIndex="0"/>
+
+                <Label text="Descripción:"
+                       style="-fx-text-fill: gold; -fx-font-size: 14px;"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="1"/>
+
+                <TextArea fx:id="txtDescripcion"
+                          promptText="Descripción del servicio"
+                          prefWidth="220"
+                          prefHeight="70"
+                          wrapText="true"
+                          GridPane.columnIndex="1"
+                          GridPane.rowIndex="1"/>
+
+                <Label text="Valor:"
+                       style="-fx-text-fill: gold; -fx-font-size: 14px;"
+                       GridPane.columnIndex="2"
+                       GridPane.rowIndex="1"/>
+
+                <TextField fx:id="txtValorServicio"
+                           promptText="Valor del servicio"
+                           prefWidth="220"
+                           GridPane.columnIndex="3"
+                           GridPane.rowIndex="1"/>
+
+                <Label text="Disponibilidad:"
+                       style="-fx-text-fill: gold; -fx-font-size: 14px;"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="2"/>
+
+                <ComboBox fx:id="cbDisponibilidad"
+                          promptText="Seleccione"
+                          prefWidth="220"
+                          GridPane.columnIndex="1"
+                          GridPane.rowIndex="2"/>
+
+                <Label text="Plan:"
+                       style="-fx-text-fill: gold; -fx-font-size: 14px;"
+                       GridPane.columnIndex="2"
+                       GridPane.rowIndex="2"/>
+
+                <ComboBox fx:id="cbPlan"
+                          promptText="Seleccione plan"
+                          prefWidth="220"
+                          GridPane.columnIndex="3"
+                          GridPane.rowIndex="2"/>
+
+            </GridPane>
+
+            <HBox alignment="CENTER" spacing="15">
+
+                <Button fx:id="btnGuardar"
+                        text="GUARDAR"
+                        onAction="#guardarServicio"
+                        prefWidth="120"
+                        style="-fx-background-color: gold; -fx-text-fill: black; -fx-font-weight: bold;"/>
+
+                <Button fx:id="btnVolver"
+                        text="VOLVER"
+                        onAction="#volverInicio"
+                        prefWidth="120"
+                        style="-fx-background-color: gold; -fx-text-fill: black; -fx-font-weight: bold;"/>
+
+            </HBox>
+
+            <TableView fx:id="tablaServicios"
+                       prefHeight="250"
+                       VBox.vgrow="ALWAYS">
+
+                <columns>
+
+                    <TableColumn fx:id="colCodigo"
+                                 text="Código"
+                                 prefWidth="100"/>
+
+                    <TableColumn fx:id="colNombre"
+                                 text="Nombre"
+                                 prefWidth="150"/>
+
+                    <TableColumn fx:id="colDescripcion"
+                                 text="Descripción"
+                                 prefWidth="220"/>
+
+                    <TableColumn fx:id="colValor"
+                                 text="Valor"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="colDisponibilidad"
+                                 text="Disponibilidad"
+                                 prefWidth="140"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+    </center>
+
+</BorderPane>
